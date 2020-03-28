@@ -1,0 +1,2 @@
+# Crawl_Sina
+通过BeautifulSoup库和requests库爬取新浪微博热搜
