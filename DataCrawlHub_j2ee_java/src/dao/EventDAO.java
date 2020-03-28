@@ -155,12 +155,14 @@ public class EventDAO {
                 int id = rs.getInt(1);
                 String name = rs.getString(2);
                 String hot = rs.getString(3);
+                String time = rs.getString(5);
                 
                 
 
                 event.id = id;
                 event.name = name;
                 event.hot = hot;
+                event.time =time;
                 
                 
                 events.add(event);

@@ -28,6 +28,7 @@
 
 <link rel="stylesheet" type = "text/css" href="WebContent/app.css" > 
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 
 
@@ -93,31 +94,31 @@ table{
 	</nav>
 	
 
-	
-	<%
-	EventDAO words = new EventDAO();
-    Event events = new Event();
-	
-    List<Event> eventList = words.list();
 
-	%>
+
+
+	
+	
   
 	<table width="500px" align="center" border="1" cellspacing="0">
   
-	<tr class="table">
-	    <td class = "name">排名</td>
-	    <td class = "name">事件</td>
-	    <td class = "name">热度</td>
-	</tr>
- 	
- 	<%for (Event event:eventList) {%>
-	<tr class="table">
-	    <td><%=event.id%></td>
-	    <td><%=event.name%></td>
-	    <td><%=event.hot %></td>
-	</tr>
-	 
-	<%}%>
+		<tr class="table">
+		    <td class = "name">排名</td>
+		    <td class = "name">事件</td>
+		    <td class = "name">热度</td>
+		    <td class = "name">时间</td>
+		</tr>
+		
+		<c:forEach items="${eventList}" var="event" varStatus="st">
+	        <tr>
+	            <td>${event.id}</td>
+	            <td>${event.name}</td>
+	            <td>${event.hot}</td>
+	            <td>${event.time}</td>
+	        </tr>
+   		 </c:forEach>
+	 	
+	 	
 	  
 	</table>
 	
